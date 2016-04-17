@@ -6,7 +6,7 @@
   <base href="/">
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
+
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
        Only enable service workers in production.
@@ -34,10 +34,33 @@
 
   <script>
     System.config({
+      map: {
+        'ng2-material':"https://cdn.rawgit.com/justindujardin/ng2-material/gh-pages/v/0.3.3/ng2-material"
+      },
       packages: {
         app: {
           format: 'register',
           defaultExtension: 'js'
+        },
+        '@angular2-material/core': {
+          format: 'cjs',
+          defaultExtension: 'js',
+          main: 'core.js'
+        },
+        '@angular2-material/toolbar': {
+          format: 'cjs',
+          defaultExtension: 'js',
+          main: 'toolbar.js'
+        },
+        '@angular2-material/card': {
+          format: 'cjs',
+          defaultExtension: 'js',
+          main: 'card.js'
+        },
+        '@angular2-material/button': {
+          format: 'cjs',
+          defaultExtension: 'js',
+          main: 'button.js'
         }
       }
     });

@@ -1,0 +1,2 @@
+<!-- <input *ngIf="is_speech_supported" (change)="onChanged($event)"/> -->
+<my-stt *ngIf="!is_speech_supported" (onSpeechOK)="onSpeechOK($event)"></my-stt>

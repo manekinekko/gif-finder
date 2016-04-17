@@ -1,19 +1,32 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {GifImage} from './gif-image/gif-image';
+import {GifInput} from './gif-input/gif-input';
+import {API} from './api/api';
 
 @Component({
-  selector: 'gif-finder-app',
-  providers: [ROUTER_PROVIDERS],
+  selector: 'my-gif-finder',
   templateUrl: 'app/gif-finder.html',
-  directives: [ROUTER_DIRECTIVES],
-  pipes: []
+  styles: [`
+    md-content {margin-top: 40px}
+  `],
+  directives: [GifImage, GifInput]
 })
-@RouteConfig([
-])
-export class GifFinderApp {
-  defaultMeaning: number = 42;
+export class App {
 
-  meaningOfLife(meaning?: number) {
-    return `The meaning of life is ${meaning || this.defaultMeaning}`;
+  private tag: string;
+  private hint: string;
+
+  contructor(){
+    this.tag = '';
+    this.hint = '';
   }
+
+  updateTag(tag) {
+    this.tag = tag;
+  }
+
+  updateHint(hint) {
+    this.hint = hint;
+  }
+
 }

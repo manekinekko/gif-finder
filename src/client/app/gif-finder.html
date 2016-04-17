@@ -1,5 +1,13 @@
-<p>
-  gif-finder Works!
-</p>
+<md-toolbar class="md-tall">
+  <div class="md-toolbar-tools">
+    <h2>
+      <span>My GiFinder</span>
+    </h2>
+    <span flex></span>
+    <my-gif-input (onSearch)="updateTag($event)" (onError)="updateHint($event)"></my-gif-input>
+  </div>
+</md-toolbar>
 
-<router-outlet></router-outlet>
+<md-content>
+  <my-gif flex [tag]="tag" [hint]="hint"></my-gif>
+</md-content>
