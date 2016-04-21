@@ -11,7 +11,7 @@ import {API} from './api/api';
   `],
   directives: [GifImage, GifInput]
 })
-export class App {
+export class GifFinderApp {
 
   private tag: string;
   private hint: string;

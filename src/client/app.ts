@@ -4,4 +4,4 @@ import {GifFinderApp} from './app/gif-finder';
 
 bootstrap(GifFinderApp, [
   HTTP_PROVIDERS
-]);
+]).catch(err => console.error(err));
