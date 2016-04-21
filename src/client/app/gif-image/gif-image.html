@@ -1,8 +1,8 @@
 <md-card>
-  <img (click)="randomize()" [src]="gif?.fixed_height_small_url || 'http://31.media.tumblr.com/03645735a2fa36394abdcddb2102a364/tumblr_inline_np9hcuZr931qd3uu5_540.gif'" height="500" class="md-card-image"/>
+  <img (click)="randomize()" [src]="gif?.image_url || default_image" height="500" class="md-card-image"/>
   <md-card-title>
     <md-card-title-text layout="row" layout-align="center center">
-      {{hint}}
+      {{hint || 'Tap on image to randomize'}}
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
