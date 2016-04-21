@@ -1,5 +1,5 @@
 <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-  <button md-fab aria-label="Speak" class="md-accent" [class.md-hue-3]="!isRecognizing()" (click)="toggle($event)">
+  <button md-fab aria-label="Speak" class="md-accent" (click)="toggle($event)">
     <i md-icon>{{ icon_status }}</i>
   </button>
 </section>

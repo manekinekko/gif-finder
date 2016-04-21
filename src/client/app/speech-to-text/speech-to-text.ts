@@ -12,44 +12,66 @@ import {SpeechEngine, SpeechErrors} from './../speech-engine/speech-engine';
 })
 export class SpeechToText {
 
-  @Output('onSpeechOK') word: EventEmitter<string> = new EventEmitter<string>();
-  @Output('onSpeechKO') hint: EventEmitter<string> = new EventEmitter<string>();
+  @Output('onSpeechOK') word$: EventEmitter<string> = new EventEmitter<string>();
+  @Output('onSpeechKO') hint$: EventEmitter<string> = new EventEmitter<string>();
   private icon_status: string = 'mic_none';
 
   constructor(private engine: SpeechEngine) {
-    this.engine.toRx().subscribe(
-      (value) => this.word.emit(value),
-      (error) => {
-        switch(error) {
+
+    this.engine.toRx().errors.subscribe(
+      (values) => {
+        console.log('error', values);
+
+        switch(values) {
           case SpeechErrors.NoMic:
             this.icon_status = 'mic_off';
-            this.hint.emit('No MIC detected');
+            this.hint$.emit('No MIC detected');
             break;
           case SpeechErrors.NoSpeech:
-            this.hint.emit('Sorry! I did not understand you');
+            this.hint$.emit('Sorry! I did not understand you');
             break;
           case SpeechErrors.Blocked:
-            this.hint.emit('This app has been blocked. Check your preferences...');
+            this.hint$.emit('This app has been blocked. Check your preferences...');
+            this.icon_status = 'mic_none';
             break;
           case SpeechErrors.Denied:
-            this.hint.emit('This app has been denied. Check your preferences...');
+            this.hint$.emit('This app has been denied. Check your preferences...');
+            this.icon_status = 'mic_none';
             break;
-          default: this.icon_status = 'mic_none';
+          default:
+            this.icon_status = 'mic_none';
+        };
+
+      },
+      (error) => {},
+      (done) => this.icon_status = 'mic_none'
+    );
+
+    this.engine.toRx().values.subscribe(
+      (data) => {
+        if(data.type === 'tag') {
+          console.log('tag', data.value);
+          this.word$.emit(data.value);
+        }
+        else if(data.type === 'hint') {
+          console.log('hint', data.value);
+          this.hint$.emit(data.value);
         }
       },
+      (error) => this.icon_status = 'mic_none',
       (done) => this.icon_status = 'mic_none'
     );
   }
 
   toggle(event) {
     this.engine.toggle(event);
-  }
-
-  isRecognizing() {
-    let status = this.engine.isRecognizing();
-    this.icon_status = status ? 'mic' : 'mic_none';
-    this.hint.emit('Listening...');
-    return status;
+    if(this.icon_status === 'mic_none') {
+      this.hint$.emit('Listening...');
+      this.icon_status =  'mic';
+    } else {
+      this.icon_status =  'mic_none';
+      this.hint$.emit('Tap on image to randomize');
+    }
   }
 
 }
