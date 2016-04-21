@@ -11,7 +11,7 @@ export class API {
 
   fetch(tag: string = 'cat') {
     return this.http.get(`${this.url}${tag}`)
-      .map( (res: Response) =>  <any>res.json().data );
+      .map( (res: Response) => <any>res.json().data );
   }
 
 }
