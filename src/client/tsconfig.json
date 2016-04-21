@@ -18,6 +18,8 @@
 
   "files": [
     "app.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "sw/loader.ts",
+    "sw/offline.ts"
   ]
 }
