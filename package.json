@@ -13,11 +13,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular2-material/button": "^2.0.0-alpha.2",
-    "@angular2-material/card": "^2.0.0-alpha.2",
-    "@angular2-material/core": "^2.0.0-alpha.2",
-    "@angular2-material/toolbar": "^2.0.0-alpha.2",
-    "angular2": "2.0.0-beta.14",
+    "angular2": "2.0.0-beta.15",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
@@ -25,7 +21,7 @@
     "zone.js": "^0.6.4"
   },
   "devDependencies": {
-    "angular-cli": "0.0.*",
+    "angular-cli": "0.0.33",
     "clang-format": "^1.0.35",
     "codelyzer": "0.0.12",
     "ember-cli-inject-live-reload": "^1.4.0",
