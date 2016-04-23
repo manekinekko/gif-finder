@@ -1,13 +1,13 @@
-<md-toolbar class="md-tall">
+<md-toolbar color="primary">
   <div class="md-toolbar-tools">
     <h2>
       <span>My GiFinder</span>
     </h2>
-    <span flex></span>
-    <my-gif-input (onSearch)="updateTag($event)" (onError)="updateHint($event)"></my-gif-input>
+    <span class="flex"></span>
+    <gif-input (onSearch)="updateTag($event)" (onError)="updateHint($event)"></gif-input>
   </div>
 </md-toolbar>
 
 <md-content>
-  <my-gif flex [tag]="tag" [hint]="hint"></my-gif>
+  <gif-image flex [tag]="tag" [hint]="hint"></gif-image>
 </md-content>

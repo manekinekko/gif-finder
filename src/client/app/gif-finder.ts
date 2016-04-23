@@ -1,15 +1,14 @@
 import {Component} from 'angular2/core';
+import {MdToolbar} from '@angular2-material/toolbar';
 import {GifImage} from './gif-image/gif-image';
 import {GifInput} from './gif-input/gif-input';
 import {API} from './api/api';
 
 @Component({
-  selector: 'my-gif-finder',
+  selector: 'gif-finder-app',
   templateUrl: 'app/gif-finder.html',
-  styles: [`
-    md-content {margin-top: 40px}
-  `],
-  directives: [GifImage, GifInput]
+  styleUrls: ['app/gif-finder.css'],
+  directives: [GifImage, GifInput, MdToolbar]
 })
 export class GifFinderApp {
 
