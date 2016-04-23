@@ -2,8 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GifFinder</title>
   <base href="/">
+  <script src="vendor/es6-shim/es6-shim.js"></script>
+  <script src="vendor/systemjs/dist/system-polyfills.js"></script>
+  <script src="vendor/angular2/bundles/angular2-polyfills.js"></script>
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="sw/loader.js" charset="utf-8"></script>
@@ -12,9 +16,6 @@
 <body>
   <gif-finder-app>Loading...</gif-finder-app>
 
-  <script src="vendor/es6-shim/es6-shim.js"></script>
-  <script src="vendor/systemjs/dist/system-polyfills.js"></script>
-  <script src="vendor/angular2/bundles/angular2-polyfills.js"></script>
   <script src="vendor/systemjs/dist/system.src.js"></script>
   <script src="vendor/rxjs/bundles/Rx.js"></script>
 
@@ -25,18 +26,17 @@
   <script>
     System.config({
       //map tells the System loader where to look for things
-      map: {
-        'ng2-material':'https://cdn.rawgit.com/justindujardin/ng2-material/gh-pages/v/0.3.3/ng2-material'
-      },
+      map: {},
       //packages defines our app package
       packages: {
         app: {
           format: 'register',
           defaultExtension: 'js'
-        },
-        'ng2-material': {
-          defaultExtension: 'js'
         }
+      },
+      paths: {
+        '@angular2-material/core': 'vendor/@angular2-material/core/core.js',
+        '@angular2-material/toolbar': 'vendor/@angular2-material/toolbar/toolbar.js'
       }
     });
     System.import('app.js').then(null, console.error.bind(console));

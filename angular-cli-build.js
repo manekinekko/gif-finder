@@ -4,7 +4,10 @@ var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
 module.exports = function(defaults) {
   var app = new Angular2App(defaults, {
-    vendorNpmFiles: []
+    vendorNpmFiles: [
+      '@angular2-material/core/core.js',
+      '@angular2-material/toolbar/toolbar.js'
+    ]
   });
   return app.toTree();
 };
