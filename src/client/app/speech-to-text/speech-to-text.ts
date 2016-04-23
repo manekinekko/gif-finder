@@ -1,5 +1,4 @@
 import {Component, NgZone, EventEmitter, Output, ViewEncapsulation} from 'angular2/core';
-import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
 import {SpeechEngine, SpeechErrors} from './../speech-engine/speech-engine';
 
 @Component({
@@ -7,7 +6,7 @@ import {SpeechEngine, SpeechErrors} from './../speech-engine/speech-engine';
   templateUrl: 'app//speech-to-text/speech-to-text.html',
   styleUrls: ['app//speech-to-text/speech-to-text.css'],
   providers: [SpeechEngine],
-  directives: [MATERIAL_DIRECTIVES],
+  directives: [],
   pipes: []
 })
 export class SpeechToText {
