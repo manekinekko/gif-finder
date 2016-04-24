@@ -1,7 +1,7 @@
 <md-card>
-  <img (click)="randomize()" [src]="gif?.image_url || default_image" height="500" class="md-card-image"/>
+  <img md-card-image (click)="randomize()" [src]="gif?.image_url || default_image" height="500"/>
   <md-card-title>
-    <md-card-title-text layout="row" layout-align="center center">
+    <md-card-title-text>
       {{hint || 'Tap on image to randomize'}}
     </md-card-title-text>
   </md-card-title>
@@ -9,6 +9,6 @@
     <p>
     </p>
   </md-card-content>
-  <md-card-actions layout="row" layout-align="end center">
+  <md-card-actions>
   </md-card-actions>
 </md-card>

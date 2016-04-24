@@ -1,4 +1,5 @@
 import {Component, Input} from 'angular2/core';
+import {MdCard} from '@angular2-material/card';
 import {GifInput} from './../gif-input/gif-input';
 import {API} from './../api/api';
 
@@ -7,7 +8,7 @@ import {API} from './../api/api';
   templateUrl: 'app//gif-image/gif-image.html',
   styleUrls: ['app//gif-image/gif-image.css'],
   providers: [API],
-  directives: [GifInput],
+  directives: [GifInput, MdCard],
   pipes: []
 })
 export class GifImage {
