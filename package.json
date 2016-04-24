@@ -18,7 +18,7 @@
     "@angular2-material/core": "2.0.0-alpha.3",
     "@angular2-material/toolbar": "2.0.0-alpha.3",
     "angular2": "2.0.0-beta.15",
-    "angular2-speech-engine": "file:///Users/wchegham/Sandbox/dev/oss/angular2-speech-engine",
+    "angular2-speech-engine": "0.0.1",
     "es6-shim": "0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
