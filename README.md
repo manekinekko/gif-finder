@@ -9,11 +9,6 @@ A demo app featuring a bunch of Angular2 features, such as:
 - Observables
 - Zone
 
-# Screenshot
-
-![screenshot](https://raw.githubusercontent.com/manekinekko/gif-finder/master/doc/screenshot-1.png)
-
-
 # Run locally
 
 You will need angular-cli to run this:
@@ -23,5 +18,9 @@ $ npm i -g angular-cli
 $ npm i
 $ ng serve
 ```
+
+# Screenshot
+
+![screenshot](https://raw.githubusercontent.com/manekinekko/gif-finder/master/doc/screenshot-1.png)
 
 ##### Enjoy
