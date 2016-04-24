@@ -10,6 +10,7 @@
   <script src="vendor/angular2/bundles/angular2-polyfills.js"></script>
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="sw/loader.js" charset="utf-8"></script>
 
 </head>
@@ -32,11 +33,25 @@
         app: {
           format: 'register',
           defaultExtension: 'js'
+        },
+        'angular2-speech-engine': {
+          format: 'cjs',
+          defaultExtension: 'js',
+          main: 'angular2-speech-engine.js',
+          meta: {
+            // sets meta for modules within the package
+            'src/*': {
+              format: 'cjs'
+            }
+          }
         }
       },
       paths: {
         '@angular2-material/core': 'vendor/@angular2-material/core/core.js',
-        '@angular2-material/toolbar': 'vendor/@angular2-material/toolbar/toolbar.js'
+        '@angular2-material/card': 'vendor/@angular2-material/card/card.js',
+        '@angular2-material/toolbar': 'vendor/@angular2-material/toolbar/toolbar.js',
+        '@angular2-material/button': 'vendor/@angular2-material/button/button.js',
+        'angular2-speech-engine': 'vendor/angular2-speech-engine/dist/'
       }
     });
     System.import('app.js').then(null, console.error.bind(console));
