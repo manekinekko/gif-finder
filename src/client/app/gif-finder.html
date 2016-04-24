@@ -1,11 +1,9 @@
 <md-toolbar color="primary">
-  <div class="md-toolbar-tools">
-    <h2>
-      <span>My GiFinder</span>
-    </h2>
+  <md-toolbar-row>
+    <span>My GiFinder</span>
     <span class="flex"></span>
-    <gif-input (onSearch)="updateTag($event)" (onError)="updateHint($event)"></gif-input>
-  </div>
+    <speech-to-text *ngIf="!is_speech_supported" (onResult)="updateTag($event)" (onError)="updateHint($event)"></speech-to-text>
+  </md-toolbar-row>
 </md-toolbar>
 
 <md-content>

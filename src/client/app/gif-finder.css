@@ -5,3 +5,8 @@ md-content {
 .flex {
   flex: 1 1 auto;
 }
+
+speech-to-text {
+  margin-top: 60px;
+  z-index: 1;
+}
