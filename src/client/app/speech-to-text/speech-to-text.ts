@@ -1,21 +1,23 @@
 import {Component, NgZone, EventEmitter, Output, ViewEncapsulation} from 'angular2/core';
-import {SpeechEngine, SpeechErrors} from './../speech-engine/speech-engine';
+import {MdButton} from '@angular2-material/button';
+// import {SpeechEngine, SpeechErrors} from './../speech-engine/speech-engine';
+import {HTML5SpeechEngine, SpeechErrors} from 'angular2-speech-engine';
 
 @Component({
   selector: 'speech-to-text',
   templateUrl: 'app//speech-to-text/speech-to-text.html',
   styleUrls: ['app//speech-to-text/speech-to-text.css'],
-  providers: [SpeechEngine],
-  directives: [],
+  providers: [HTML5SpeechEngine],
+  directives: [MdButton],
   pipes: []
 })
 export class SpeechToText {
 
-  @Output('onSpeechOK') word$: EventEmitter<string> = new EventEmitter<string>();
-  @Output('onSpeechKO') hint$: EventEmitter<string> = new EventEmitter<string>();
+  @Output('onResult') word$: EventEmitter<string> = new EventEmitter<string>();
+  @Output('onError') hint$: EventEmitter<string> = new EventEmitter<string>();
   private icon_status: string = 'mic_none';
 
-  constructor(private engine: SpeechEngine) {
+  constructor(private engine: HTML5SpeechEngine) {
 
     this.engine.toRx().errors.subscribe(
       (values) => {
