@@ -12,7 +12,7 @@ module.exports = function(defaults) {
       'es6-shim/es6-shim.js',
       'reflect-metadata/*.js',
       'rxjs/**/*.js',
-      '@angular/**/*.js'
+      '@angular/**/*.js',
       '@angular2-material/**/*.js',
 
       'angular2-speech-engine/dist/**/*.js'
