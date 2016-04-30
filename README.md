@@ -1,6 +1,7 @@
 # gif-finder
+
 A demo app featuring a bunch of Angular2 features, such as:
-- Angular2 (beta 15)
+- Angular2 (@angular/*@0.0.0-3)
 - Typescript
 - Material2 Design
 - Component lifecycle
@@ -8,6 +9,7 @@ A demo app featuring a bunch of Angular2 features, such as:
 - Http
 - Observables
 - Zone
+- SystemJS
 
 # Run locally
 
