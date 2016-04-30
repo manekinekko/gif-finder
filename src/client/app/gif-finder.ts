@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {MdToolbar} from '@angular2-material/toolbar';
 import {GifImage} from './gif-image/gif-image';
 import {SpeechToText} from './speech-to-text/speech-to-text';

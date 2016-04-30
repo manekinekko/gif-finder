@@ -1,4 +1,4 @@
-import {Component, NgZone, EventEmitter, Output, ViewEncapsulation} from 'angular2/core';
+import {Component, NgZone, EventEmitter, Output, ViewEncapsulation} from '@angular/core';
 import {MdButton} from '@angular2-material/button';
 // import {SpeechEngine, SpeechErrors} from './../speech-engine/speech-engine';
 import {HTML5SpeechEngine, SpeechErrors} from 'angular2-speech-engine';

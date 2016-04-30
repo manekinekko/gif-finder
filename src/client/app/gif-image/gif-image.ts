@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input} from '@angular/core';
 import {MdCard} from '@angular2-material/card';
 import {GifInput} from './../gif-input/gif-input';
 import {API} from './../api/api';
